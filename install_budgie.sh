@@ -34,5 +34,6 @@ sudo pkg install \
 	gettext \
 	gnome-menus
 
+sed -i '' -e "s/'-Werror-implicit-function-declaration',//g" meson.build
 meson build --prefix=/usr --sysconfdir=/etc -Dwith-bluetooth=false
 ninja -j$(($(getconf _NPROCESSORS_ONLN)+1)) -C build
