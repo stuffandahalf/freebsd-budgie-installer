@@ -35,5 +35,8 @@ sudo pkg install \
 	gnome-menus
 
 sed -i '' -e "s/'-Werror-implicit-function-declaration',//g" meson.build
+#sed -i '' -e 's/UUIDFlags.TIME_SAFE_TYPE/UUIDFlags.TIME_TYPE/g' src/panel/panel.vala
+sed -i '' -e 's/LibUUID.generate_time_safe/LibUUID.generate_time/g' src/panel/uuid.vala
 meson build --prefix=/usr --sysconfdir=/etc -Dwith-bluetooth=false
 ninja -j$(($(getconf _NPROCESSORS_ONLN)+1)) -C build
+sudo ninja install -C build
