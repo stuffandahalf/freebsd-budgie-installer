@@ -32,7 +32,8 @@ sudo pkg install \
 	cmake \
 	e2fsprogs-libuuid \
 	gettext \
-	gnome-menus
+	gnome-menus \
+	intltool
 
 sed -i '' -e "s/'-Werror-implicit-function-declaration',//g" meson.build
 #sed -i '' -e 's/UUIDFlags.TIME_SAFE_TYPE/UUIDFlags.TIME_TYPE/g' src/panel/panel.vala
